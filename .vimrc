@@ -9,10 +9,4 @@ set shiftwidth=4
 set noexpandtab
 set mouse=a
 set ttymouse=xterm2
-
-nnoremap i :w<CR>i
-inoremap <C-[> <C-[>:w<CR>
-nnoremap u u:w<CR>
-nnoremap a :w<CR>a
-nnoremap I :w<CR>I
-nnoremap A :w<CR>d
+set backspace=indent,eol,start
