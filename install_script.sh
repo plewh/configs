@@ -3,6 +3,7 @@
 #        - run me after a fresh install to add custom settings
 #        - things:
 #            - install git
+#            - install vim
 #            - install neovim
 #            - download and apply vimrc from github
 #            - install g++
@@ -27,9 +28,12 @@ git config --global user.email "ashhep@gmail.com"
 git config --global user.name "plewh"
 git config --global push.default simple
 echo " "
+echo "********** installing vim                 **********"
+sudo apt-get install vim
+echo " "
 echo "********** installing neovim              **********"
 sudo apt-get -y install neovim
-sudo update-alternatives --install /usr/bin/vim vim /usr/bin /nvim 60
+sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
 sudo update-alternatives --config vim
 echo " "
 echo "********** installing vimrc               **********"
@@ -58,3 +62,6 @@ echo " "
 echo "********** installing unattended-upgrades **********"
 sudo apt-get -y install unattended-upgrades
 sudo dpkg-reconfigure -plow unattended-upgrades
+echo " "
+echo " "
+sudo shutdown -r +1
