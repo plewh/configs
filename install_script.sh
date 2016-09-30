@@ -4,8 +4,6 @@
 #        - things:
 #            - install git
 #            - install vim
-#            - install neovim
-#            - download and apply vimrc from github
 #            - install g++
 #            - install tmux
 #            - install libsdl
@@ -17,7 +15,7 @@
 
 clear
 echo "********** adding new repos               **********"
-sudo add-apt-repository -y ppa:neovim-ppa/unstable
+echo "Nah..."
 echo " "
 echo "********** do apt-gets                    **********"
 sudo apt-get -y update && sudo apt-get -y dist-upgrade
@@ -29,15 +27,10 @@ git config --global user.name "plewh"
 git config --global push.default simple
 echo " "
 echo "********** installing vim                 **********"
-sudo apt-get install vim
-echo " "
-echo "********** installing neovim              **********"
-sudo apt-get -y install neovim
-sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
-sudo update-alternatives --config vim
+sudo apt-get -y install vim
 echo " "
 echo "********** installing vimrc               **********"
-wget -O /home/plewh/.nvimrc https://github.com/plewh/configs/raw/master/.vimrc
+wget -O /home/plewh/.vimrc https://github.com/plewh/configs/raw/master/.vimrc
 echo " "
 echo "********** installing g++                 **********"
 sudo apt-get -y install g++
@@ -64,4 +57,11 @@ sudo apt-get -y install unattended-upgrades
 sudo dpkg-reconfigure -plow unattended-upgrades
 echo " "
 echo " "
-sudo shutdown -r +1
+
+read -p "Reboot? " in
+if [ "$in" == "y" ]; then
+	echo "rebooting...";
+	sudo reboot now
+else
+	echo "exiting...";
+fi

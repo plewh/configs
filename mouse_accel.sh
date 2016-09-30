@@ -5,5 +5,7 @@
 #		- tweak Constant Deceleration param to change sensitivity (higher number = lower speed)
 ############################################################################
 
-xinput set-prop "Razer Razer DeathAdder" "Device Accel Profile" -1
-xinput set-prop "Razer Razer DeathAdder" "Device Accel Constant Deceleration" 3
+xinput set-prop 14 "Device Accel Profile" -1
+xinput set-prop 15 "Device Accel Profile" -1
+xinput set-prop 14 "Device Accel Constant Deceleration" 1
+xinput set-prop 15 "Device Accel Constant Deceleration" 1
