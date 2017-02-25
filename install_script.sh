@@ -4,10 +4,10 @@
 #        - things:
 #            - install git
 #            - install vim
-#            - install g++
+#            - install c++ compiler
 #            - install tmux
-#            - install libsdl
-#            - install libsdl_ttf
+#            - install SDL2
+#            - install SDL2 ttf library
 #            - download and apply cool DooM wallpaper from github
 #            - download and install mouse_accel script 
 #            - unattended-upgrades to silently do upgrades without nagging
@@ -18,13 +18,14 @@ echo "********** adding new repos               **********"
 echo "Nah..."
 echo " "
 echo "********** do apt-gets                    **********"
-sudo apt-get -y update && sudo apt-get -y dist-upgrade
+sudo apt -y update && sudo apt -y dist-upgrade
 echo " "
 echo "********** installing git                 **********"
 sudo apt-get -y install git
 git config --global user.email "ashhep@gmail.com"
 git config --global user.name "plewh"
 git config --global push.default simple
+git config --global core.editor "vim"
 echo " "
 echo "********** installing vim                 **********"
 sudo apt-get -y install vim
@@ -32,13 +33,13 @@ echo " "
 echo "********** installing vimrc               **********"
 wget -O /home/plewh/.vimrc https://github.com/plewh/configs/raw/master/.vimrc
 echo " "
-echo "********** installing g++                 **********"
+echo "********** installing c++ compiler        **********"
 sudo apt-get -y install g++
 echo " "
 echo "********** installing tmux                **********"
 sudo apt-get -y install tmux
 echo " "
-echo "********** installing libsdl              **********"
+echo "********** installing SDL2                **********"
 sudo apt-get -y install libsdl2-2.0-0
 sudo apt-get -y install libsdl2-dev
 sudo apt-get -y install libsdl2-ttf-2.0-0
@@ -57,6 +58,10 @@ sudo apt-get -y install unattended-upgrades
 sudo dpkg-reconfigure -plow unattended-upgrades
 echo " "
 echo " "
+
+echo " "
+echo "********** creating custom aliases        ***********"
+echo "alias doupgrade='sudo apt -y update && sudo apt -y upgrade && sudo apt -y autoremove'" >> ~/.bash_aliases
 
 read -p "Reboot? " in
 if [ "$in" == "y" ]; then
