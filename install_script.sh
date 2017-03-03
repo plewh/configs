@@ -9,6 +9,7 @@
 #            - install SDL2
 #            - install SDL2 ttf library
 #            - install tag file generator
+#            - install valgrind
 #            - download and apply cool DooM wallpaper from github
 #            - download and install mouse_accel script 
 #            - unattended-upgrades to silently do upgrades without nagging
@@ -51,6 +52,9 @@ sudo apt -y install libsdl2-ttf-dev
 echo " "
 echo "********** installing exuberant  ctags    **********"
 sudo apt -y install exuberant-ctags
+echo " "
+echo "********** installing valgrind            **********"
+sudo apt -y install valgrind
 echo " "
 echo "********** installing cool DooM wallpaper **********"
 wget -O /home/plewh/Downloads/wpaper.png https://github.com/plewh/configs/raw/master/d.png
