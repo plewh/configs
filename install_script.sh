@@ -71,17 +71,21 @@ sudo apt -y install conky
 sudo wget -O /etc/conky/conky.conf https://raw.githubusercontent.com/plewh/configs/master/conky.conf
 sudo wget -O /home/plewh/.config/autostart/conky.desktop https://raw.githubusercontent.com/plewh/configs/master/conky.desktop
 echo " "
-echo "********** installing gnome tweak tool    **********"
+echo "********** installing gnome tweak tool    ***********"
 sudo apt -y install gnome-tweak-tool
 echo " "
-echo "********** installing ncurses dev lib     *********"
+echo "********** installing ncurses dev lib     ***********"
 sudo apt -y install libncurses5-dev
 echo " "
-echo "********** installing vlc media player    *********"
+echo "********** installing vlc media player    ***********"
 sudo apt -y install vlc
-echo " "
 echo " "
 echo "********** creating custom aliases        ***********"
 echo "alias doupgrade='sudo apt -y update && sudo apt -y upgrade && sudo apt -y autoremove'" >> ~/.bash_aliases
-
+echo " "
+echo "********** killing unneeded services      ***********"
+sudo systemctl stop cups.service
+sudo systemctl disable cups.service
+echo " "
+echo " "
 echo " *** COMPLETED *** (don't forget to reboot)"
