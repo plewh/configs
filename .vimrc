@@ -10,3 +10,4 @@ set noexpandtab
 set mouse=a
 set ttymouse=xterm2
 set backspace=indent,eol,start
+set switchbuf=usetab,newtab
