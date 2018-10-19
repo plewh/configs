@@ -68,24 +68,34 @@ sudo apt -y install net-tools
 echo " "
 echo "********** installing conky               **********"
 sudo apt -y install conky
+mkdir -v ~/.config/autostart
 sudo wget -O /etc/conky/conky.conf https://raw.githubusercontent.com/plewh/configs/master/conky.conf
 sudo wget -O /home/plewh/.config/autostart/conky.desktop https://raw.githubusercontent.com/plewh/configs/master/conky.desktop
 echo " "
 echo "********** installing gnome tweak tool    ***********"
-sudo apt -y install gnome-tweak-tool
+#sudo apt -y install gnome-tweak-tool
 echo " "
 echo "********** installing ncurses dev lib     ***********"
 sudo apt -y install libncurses5-dev
 echo " "
 echo "********** installing vlc media player    ***********"
-sudo apt -y install vlc
+#sudo apt -y install vlc
 echo " "
 echo "********** creating custom aliases        ***********"
-echo "alias doupgrade='sudo apt -y update && sudo apt -y upgrade && sudo apt -y autoremove'" >> ~/.bash_aliases
+#echo "alias doupgrade='sudo apt -y update && sudo apt -y upgrade && sudo apt -y autoremove'" >> ~/.bash_aliases
+echo " "
+echo "********** start tmux with gnome-terminal ***********"
+echo "tmux" >> ~/.bashrc
+echo " "
+echo "********** install virtualbox             ***********"
+sudo apt -y install virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso virtualbox-guest-utils virtualbox-guest-x11
+echo " "
+echo "********** install dropbox                ***********"
+sudo apt -y install nautilus-dropbox
 echo " "
 echo "********** killing unneeded services      ***********"
 sudo systemctl stop cups.service
 sudo systemctl disable cups.service
 echo " "
 echo " "
-echo " *** COMPLETED *** (don't forget to reboot)"
+echo " *** COMPLETED *** (don't forget to reboot, start dropbox and install firefox extensions!)"
